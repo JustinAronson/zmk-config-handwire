@@ -1,12 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include "handwire.dtsi"
 
-/ {
-    
-
-    &default_transform {
-        col-offset = <6>;
-    }
-
-    
-};
+&default_transform {
+    col-offset = <6>;
+}
