@@ -1,0 +1,11 @@
+file_format: "1"
+id: handwire
+name: handwire
+type: shield
+requires:
+  - pro_micro
+features:
+  - keys
+siblings:
+ - handwire_left
+ - handwire_right
