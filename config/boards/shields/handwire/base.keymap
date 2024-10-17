@@ -69,15 +69,15 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
-// // HRM combo hack - workaround for lack of tap-only combos (ZMK issue #544)
-// #define ZMK_COMBO_8(NAME, TAP, KEYPOS, LAYERS, COMBO_TERM, COMBO_IDLE, HOLD, SIDE) \
-//     MAKE_HRM(hm_combo_ ## NAME, &kp, TAP, SIDE THUMBS) \
-//     ZMK_COMBO_6(NAME, &hm_combo_ ## NAME HOLD 0, KEYPOS, LAYERS, COMBO_TERM, COMBO_IDLE)
+// HRM combo hack - workaround for lack of tap-only combos (ZMK issue #544)
+#define ZMK_COMBO_8(NAME, TAP, KEYPOS, LAYERS, COMBO_TERM, COMBO_IDLE, HOLD, SIDE) \
+    MAKE_HRM(hm_combo_ ## NAME, &kp, TAP, SIDE THUMBS) \
+    ZMK_COMBO_6(NAME, &hm_combo_ ## NAME HOLD 0, KEYPOS, LAYERS, COMBO_TERM, COMBO_IDLE)
 
 /* Combos, leader key sequences, mouse emulation */
 
-// #include "combos.dtsi"  // must be sources after HRM-combo hack
-// #include "leader.dtsi"
+#include "combos.dtsi"  // must be sources after HRM-combo hack
+#include "leader.dtsi"
 #include "extra_keys.h"
 
 /* Nav cluster */
