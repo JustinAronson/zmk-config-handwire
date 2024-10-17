@@ -42,9 +42,9 @@
     quick-tap-ms = <QUICK_TAP_MS>;
 };
 
-// &leader {  // leader-key config
-//     timeout-ms = <650>;
-// };
+&leader {  // leader-key config
+    timeout-ms = <650>;
+};
 
 /* Homerow mods */
 
@@ -77,7 +77,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 /* Combos, leader key sequences, mouse emulation */
 
 // #include "combos.dtsi"  // must be sources after HRM-combo hack
-// #include "leader.dtsi"
+#include "leader.dtsi"
 #include "extra_keys.h"
 
 /* Nav cluster */
@@ -90,8 +90,8 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
     hold-trigger-key-positions = <0>;
 
 &mt { MT_CORE };
-ZMK_HOLD_TAP(mt_home, bindings = <&masked_home>, <&kp>; MT_CORE)
-ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
+ZMK_HOLD_TAP(mt_home, bindings = <&masked_home>, <&kp> MT_CORE)
+ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp> MT_CORE)
 
 #define NAV_LEFT  &mt_home 0   LEFT    // tap: left  | long-tap: beginning of line
 #define NAV_RIGHT &mt_end 0    RIGHT   // tap: right | long-tap: end       of line
@@ -205,7 +205,7 @@ ZMK_MACRO(win_sleep,
 )
 
 // Sticky shift + leader
-// ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
+ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 
 // misc aliases
 #define CANCEL      &kp K_CANCEL             // cancel caps-word, num-word and smart-mouse
