@@ -1,5 +1,5 @@
 config SHIELD_HANDWIRE_LEFT
-    def_bool $(shields_list_contains, handwire_left)
+    def_bool $(shields_list_contains,handwire_left)
 
 config SHIELD_HANDWIRE_RIGHT
-    def_bool $(shields_list_contains, handwire_right)
+    def_bool $(shields_list_contains,handwire_right)
