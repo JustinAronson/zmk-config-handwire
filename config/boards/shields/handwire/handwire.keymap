@@ -2,7 +2,7 @@
 #include "zmk-helpers/key-labels/36.h"
 
 /* map Zen's extra keys */
-#define X_LH  &lt SYS BSPC      // thumb row, left
+#define X_LH  &smart_shft      // thumb row, left
 #define X_RH  SMART_NUM  // thumb row, right
 
 /* activate bluetooth */
